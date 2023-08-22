@@ -72,6 +72,9 @@ p > img {
 .footer > p{
     text-align: center;
 }
+.projects > a{
+    color:#3F88C5;
+}
 .sticky-container {
     position: sticky;
     top: 1.25rem;
