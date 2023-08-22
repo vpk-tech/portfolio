@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VPK's Portfolio">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>VPK's Portfolio</title>
+</head>
+<body>
+    <header class="top-container">
+        <img class="cloud top-cloud" src="./assets/images/cloud.png" alt="cloud-image">
+        <div class="title-text">
+            <h1>I'm Vishnu Prasad.</h1>
+            <h2 class="header2">Welcome to my portfolio!<span class="blinking-underscore"></span><h3 class="enter-btn"> Enter!</h3></h2>
+        </div>
+        <img class="cloud bottom-cloud" src="./assets/images/cloud.png" alt="cloud-image">
+        <img class="mountain" src="./assets/images/mountain.png" alt="mountain-image">
+    </header>
+
+    <main class="middle-container" id="middle-container">
+        <section class="profile">
+            <img id="profile-img" src="./assets/images/profile-pic.png" alt="vishnu's-profile-img">
+            <h2> &lt;hello!&gt; </h2>
+            <p class="intro">
+                I am a <span class=" gradient-red">bugBountyHunter</span> and <span class="gradient-green">webDeveloper</span>. I'm enthusiastic about working with web technologies and constantly experimenting with new ideas.
+            </p>
+        </section>
+        <!-- <hr /> -->
+        <section class="skills">
+            <!-- <h2>Brief Introduction</h2> -->
+            <h2>technologyStack</h2>
+            <div class="logos">
+                <div class="logo-item">                
+                    <img class="html" src="./assets/images/html_icon.png">
+                    <p>HTML</p>
+                </div>
+                <div class="logo-item">                
+                    <img class="css" src="./assets/images/CSS_icon.png">
+                    <p>CSS</p>
+                </div>
+                <div class="logo-item">
+                    <img class="js" src="./assets/images/js_icon.png">
+                    <p>javaScript</p>
+                </div>
+                <div class="logo-item">
+                    <img class="burpsuite" src="./assets/images/burpsuite_icon.png">
+                    <p>burpsuite</p>
+                </div>
+
+
+            </div>
+
+            <div class="button-row">
+                <a href="./about.html" class="button b1">aboutMe</a>
+                <a href="#status" class="button b2">status</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bottom-container">
+        <section class="contact-me">
+            <nav>
+                <a class="footer-link mail" href="mailto:krvishnu1729@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a class="footer-link lin" href="https://linkedin.com/in/vishnuprasad21c"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a class="footer-link ghub" href="https://github.com/vpk-tech"><i class="fab fa-github"></i> Github</a>
+            </nav>            
+            <p class="copyright">&copy; 2023 vpk-tech. All rights reserved.</p>
+        </section>
+    </footer>
+
+    <div id="status-dialog" class="dialog">
+        <div class="dialog-content">
+            <h2>Status</h2>
+            <p><ol>
+                <li>Website_version - Version 0.2</li>
+                <li>Feature Coming soon.. - Responsive website</li>
+                <li>Currently Learning - Building foundation of HTMl,CSS and JS and making webites using the trio.</li>
+            </ol></p>
+            <button id="close-dialog">Close</button>
+        </div>
+    </div>
+
+
+    <!-- smooth roll into middle container from enter-button event -->
+    <script>
+        // Add an event listener to the Enter button
+        const enterButton = document.querySelector('.enter-btn');
+        enterButton.addEventListener('click', () => {
+            // Scroll to the middle-container section
+            const middleContainer = document.getElementById('middle-container');
+            middleContainer.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // status script
+        const statusButton = document.querySelector('.b2'); // Assuming this is the "status" button
+        const statusDialog = document.getElementById('status-dialog');
+        const closeDialogButton = document.getElementById('close-dialog');
+
+        // Function to open the dialog
+        function openDialog() {
+            statusDialog.style.display = 'flex';
+        }
+
+        // Function to close the dialog
+        function closeDialog() {
+            statusDialog.style.display = 'none';
+        }
+
+        // Event listeners
+        statusButton.addEventListener('click', openDialog);
+        closeDialogButton.addEventListener('click', closeDialog);
+
+    </script>
+
+
+</body>
+</html>
