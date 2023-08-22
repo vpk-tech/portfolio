@@ -1,0 +1,858 @@
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* #F5FFF5 */
+
+/* Define variables for consistent use of colors and fonts */
+:root {
+    --primary-bg-color: #3F88C5;
+    --secondary-bg-color: #141414; /* Darker-#2E6E9A *//* Lighter-#5D9BCB */
+    --mountain-color: #E0EDF8; /* lighter - #BBCDDC; */
+    --text-color: #E38664; /* #621A0B #FFA500 - bright orange */
+    --link-color: #621A0B; /* #CC6F28; #5F464B - roseebony */
+    --accent-color: #AEDFF7;
+    --font-sacramento: 'Sacramento', cursive;
+    --font-merriweather: 'Merriweather', serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+    /* default border radius using for transitions */
+    --default-border-radius:0;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    font-family: var(--font-merriweather);
+    text-align: center;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header.top-container {
+    position: relative;
+    background-color: var(--primary-bg-color);
+    padding-top: 3.125rem; 
+    overflow: hidden;
+}
+
+/* Set cloud positions and animations */
+.cloud {
+    position: absolute;
+}
+
+.top-cloud {
+    animation: moveTopCloud 40s linear infinite;
+    left: -9.375rem; 
+}
+
+.bottom-cloud {
+    animation: moveBottomCloud 40s linear infinite;
+    left: -9.375rem; 
+    animation-delay: 6s;
+}
+
+@keyframes moveTopCloud {
+    0% {
+        left: -9.375rem; 
+    }
+    100% {
+        left: 100%; 
+    }
+}
+
+@keyframes moveBottomCloud {
+    0% {
+        left: -9.375rem; 
+    }
+    100% {
+        left: 100%; 
+    }
+}
+
+header .title-text {
+    padding: 1.5rem 0; 
+}
+
+header h1 {
+    color: var(--text-color);
+    font-size: 3rem; 
+    font-family: var(--font-sacramento);
+    margin: 0.625rem auto;
+}
+
+header .header2 {
+    color: var(--mountain-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem; 
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+}
+/* Style for the "Enter!" button */
+header .enter-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--primary-bg-color);
+    color: var(--mountain-color);
+    padding: 0.5rem 0.5rem; /* Adjust padding as needed */
+    border-radius: 4px; /* Rounded corners for the button */
+    cursor: pointer; /* Add a pointer cursor on hover to indicate interactivity */
+    transition: background-color 0.5s cubic-bezier(.31,.64,.73,.38); /* Adjust cubic-bezier values for smoother transition */
+    width: auto;
+    display: inline-block;
+}
+
+/* Style for the "Enter!" button on hover */
+header .enter-btn:hover {
+    background-color:#2E6E9A; /*Change the background color on hover*/
+    transform: scale(1.1); /* Slight scaling on hover for an interactive effect */
+}
+
+
+/* Blinking_underscore */
+header .blinking-underscore {
+    color: var(--mountain-color);
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    font-size: 4vw; 
+    font-weight: 500;
+    position: relative;
+}
+
+header .blinking-underscore::after {
+    content: "_";
+    position: absolute;
+    animation: blink 1s infinite;
+    bottom: -1.7rem; 
+    /* left: 0em;  */
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+/* Mountain Styles */
+img.mountain {
+    /* position: relative; */
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%; /* Set width to 100% to adapt to different displays */
+    height: auto; /* Maintain aspect ratio */
+}
+main.middle-container {
+    margin: 3.125rem 0; 
+    background-color: var(--primary-bg-color);
+    /* Changes after 720px */
+}
+section.profile {
+    background-color: var(--secondary-bg-color);
+    border-radius: 2rem;
+    padding: 1.25rem; 
+    margin: 1.25rem;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:right;
+    justify-content:space-evenly;
+    /* Changes after 720px */
+}
+/* -------------------------------------------------------------------------------------- */
+@media screen and (min-width:375px) and (max-width:430px){
+    /* 375px 430px 50px*/
+    /* Main Content Styles */
+
+    
+    section #profile-img {
+        height: auto;
+        width: 30%; 
+        border-radius: 2rem;
+        object-fit: cover;
+        border: 0.125rem solid var(--text-color); 
+        box-shadow: 0px 0px 0.3125rem 0.125rem var(--text-color);
+        /* justify-content: flex-start; */
+    }
+    
+    section.profile h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2.5rem; 
+        font-weight: 300;
+        margin-bottom: 0.625rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    section.profile p.intro {
+        color: var(--mountain-color);
+        font-weight: normal;
+        font-size: 1.215rem;
+        padding-top: 2rem;
+    }
+    
+    /* Gradient on text */
+    section .gradient-red {
+        background-image: linear-gradient(180deg, #FF0000, #8f0000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent; 
+    }
+    
+    section .gradient-green {
+        background-image: linear-gradient(180deg, #00FF00, #008000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent; 
+    }
+    
+    /* Skills Section Styles */
+    section.skills {
+        background-color: var(--secondary-bg-color);
+        margin: 1.25rem; 
+        border-radius: 2rem;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction:column;
+        /* flex-wrap: wrap; */
+        /* align-items:center; */
+        /* justify-content:space-around; */
+    }
+    
+    section.skills h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2.5rem; 
+        font-weight: 300;
+        margin-bottom: 0.625rem;
+        /* display: inline-flex;  */
+    }
+    section.skills .logos {
+        color: var(--mountain-color);
+        font-family: var(--font-merriweather);
+        text-align: center;
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        align-items:normal;
+        justify-content:space-around;
+        gap: 40px;
+    }
+    section .logos img {
+        width: 3.125rem; 
+        height: auto;
+    }
+    
+    section .logo-item p {
+        margin-top: 5px; 
+        font-weight:300;
+    }
+    
+    /* BUTTON STYLES */
+    section .button-row{
+        margin-top: auto;
+        padding-bottom: 0.625rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    
+    }
+}
+@media screen and (min-width:431px) and  (max-width:530px) {
+
+    /* Reset some default styles */
+    
+    /* Main Content Styles */
+    
+    
+    section #profile-img {
+        height: auto;
+        width: 30%; 
+        border-radius: 2rem;
+        object-fit: cover;
+        border: 0.125rem solid var(--text-color); 
+        box-shadow: 0px 0px 0.3125rem 0.125rem var(--text-color);
+        /* justify-content: flex-start; */
+    }
+    
+    section.profile h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2.5rem; 
+        font-weight: 300;
+        margin-bottom: 0.625rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    section.profile p.intro {
+        color: var(--mountain-color);
+        font-weight: normal;
+        font-size: 1.215rem;
+        padding-top: 2rem;
+    }
+    
+    /* Gradient on text */
+    section .gradient-red {
+        background-image: linear-gradient(180deg, #FF0000, #8f0000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent; 
+    }
+    
+    section .gradient-green {
+        background-image: linear-gradient(180deg, #00FF00, #008000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent; 
+    }
+    
+    /* Skills Section Styles */
+    section.skills {
+        background-color: var(--secondary-bg-color);
+        margin: 1.25rem; 
+        border-radius: 2rem;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction:column;
+        /* flex-wrap: wrap; */
+        /* align-items:center; */
+        /* justify-content:space-around; */
+    }
+    
+    section.skills h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2.5rem; 
+        font-weight: 300;
+        margin-bottom: 0.625rem;
+        /* display: inline-flex;  */
+    }
+    section.skills .logos {
+        color: var(--mountain-color);
+        font-family: var(--font-merriweather);
+        text-align: center;
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        align-items:normal;
+        justify-content:space-around;
+        gap: 90px;
+    }
+    section .logos img {
+        width: 3.125rem; 
+        height: auto;
+    }
+    
+    section .logo-item p {
+        margin-top: 5px; 
+        font-weight:300;
+    }
+    
+    /* BUTTON STYLES */
+    section .button-row{
+        margin-top: auto;
+        padding-bottom: 0.625rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    
+    }
+   
+}
+@media screen and (min-width:531px) and  (max-width:590px) {
+
+    /* Reset some default styles */
+    
+    /* Main Content Styles */
+
+
+    
+    section #profile-img {
+        height: auto;
+        width: 30%; 
+        border-radius: 2rem;
+        object-fit: cover;
+        border: 0.125rem solid var(--text-color); 
+        box-shadow: 0px 0px 0.3125rem 0.125rem var(--text-color);
+        /* justify-content: flex-start; */
+    }
+    
+    section.profile h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2.5rem; 
+        font-weight: 300;
+        margin-bottom: 0.625rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    section.profile p.intro {
+        color: var(--mountain-color);
+        font-weight: normal;
+        font-size: 1.215rem;
+        padding-top: 2rem;
+    }
+    
+    /* Gradient on text */
+    section .gradient-red {
+        background-image: linear-gradient(180deg, #FF0000, #8f0000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent; 
+    }
+    
+    section .gradient-green {
+        background-image: linear-gradient(180deg, #00FF00, #008000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent; 
+    }
+    
+    /* Skills Section Styles */
+    section.skills {
+        background-color: var(--secondary-bg-color);
+        margin: 1.25rem; 
+        border-radius: 2rem;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction:column;
+        /* flex-wrap: wrap; */
+        /* align-items:center; */
+        /* justify-content:space-around; */
+    }
+    
+    section.skills h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2.5rem; 
+        font-weight: 300;
+        margin-bottom: 0.625rem;
+        /* display: inline-flex;  */
+    }
+    section.skills .logos {
+        color: var(--mountain-color);
+        font-family: var(--font-merriweather);
+        text-align: center;
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        align-items:normal;
+        justify-content:space-between;
+        /* gap: 120px; */
+    }
+    section .logos img {
+        width: 3.125rem; 
+        height: auto;
+    }
+    
+    section .logo-item p {
+        margin-top: 5px; 
+        font-weight:300;
+    }
+    
+    /* BUTTON STYLES */
+    section .button-row{
+        margin-top: auto;
+        padding-bottom: 0.625rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    
+    }
+   
+    
+}
+@media screen and (min-width:591px) and  (max-width:720px) {
+
+    /* Reset some default styles */
+    
+    /* Main Content Styles */
+
+    
+    section #profile-img {
+        height: auto;
+        width: 30%; 
+        border-radius: 2rem;
+        object-fit: cover;
+        border: 0.125rem solid var(--text-color); 
+        box-shadow: 0px 0px 0.3125rem 0.125rem var(--text-color);
+        /* justify-content: flex-start; */
+    }
+    
+    section.profile h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2.5rem; 
+        font-weight: 300;
+        margin-bottom: 0.625rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    section.profile p.intro {
+        color: var(--mountain-color);
+        font-weight: normal;
+        font-size: 1.215rem;
+        padding-top: 2rem;
+    }
+    
+    /* Gradient on text */
+    section .gradient-red {
+        background-image: linear-gradient(180deg, #FF0000, #8f0000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent; 
+    }
+    
+    section .gradient-green {
+        background-image: linear-gradient(180deg, #00FF00, #008000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent; 
+    }
+    
+    /* Skills Section Styles */
+    section.skills {
+        background-color: var(--secondary-bg-color);
+        margin: 1.25rem; 
+        border-radius: 2rem;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction:column;
+        /* flex-wrap: wrap; */
+        /* align-items:center; */
+        /* justify-content:space-around; */
+    }
+    
+    section.skills h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2.5rem; 
+        font-weight: 300;
+        margin-bottom: 0.625rem;
+        /* display: inline-flex;  */
+    }
+    section.skills .logos {
+        color: var(--mountain-color);
+        font-family: var(--font-merriweather);
+        text-align: center;
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        align-items:normal;
+        justify-content:space-between;
+        /* gap: 50px; */
+    }
+    section .logos img {
+        width: 3.125rem; 
+        height: auto;
+    }
+    
+    section .logo-item p {
+        margin-top: 5px; 
+        font-weight:300;
+    }
+    
+    /* BUTTON STYLES */
+    section .button-row{
+        margin-top: auto;
+        padding-bottom: 0.625rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    
+    }
+    
+}
+@media screen and (min-width:721px){
+    main.middle-container {
+        margin: 3.125rem 0; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: var(--primary-bg-color);
+    }
+    
+    section.profile {
+        background-color: var(--secondary-bg-color);
+        border-radius: var(--default-border-radius);
+        transition: border-radius 0.5s cubic-bezier(.31,.64,.73,.38); /* Adjust cubic-bezier values for smoother transition */
+        padding: 1.25rem; 
+        margin: 1.25rem;
+        width: 45%;
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text horizontally */
+    }
+
+    section.profile h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2rem; 
+        font-weight: 300;
+        margin-bottom: 0.625rem;
+        margin-top: 1rem;
+    }
+    section #profile-img {
+        height: auto;
+        width: 40%; 
+        border-radius: var(--default-border-radius);
+        transition: border-radius 0.5s cubic-bezier(.31,.64,.73,.38); /* Adjust cubic-bezier values for smoother transition */
+        object-fit: cover;
+        border: 0.125rem solid var(--text-color); 
+        box-shadow: 0px 0px 0.3125rem 0.125rem var(--text-color);
+    }
+
+    section.profile:hover {
+        --default-border-radius: 5rem; /* Transition to round corners on hover */
+    }
+    section #profile-img:hover {
+        --default-border-radius: 5rem; /* Transition to round corners on hover */
+    }
+
+    section.profile p.intro {
+        color: var(--mountain-color);
+        font-weight: normal;
+        padding-top: 1.5rem;
+        /* text-align: center; */
+        /* font-size : 1.215rem */
+    }
+    /*-------------------------------------------------------------------------------------------*/    
+    /* Applying gradient and transition for the text */
+    section .gradient-red {
+        background-image: linear-gradient(180deg, #FF0000, #8f0000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent; 
+        transition: font-size 0.5s cubic-bezier(.31,.64,.73,.38); /* Adjust cubic-bezier values for smoother transition */
+    }
+    section .gradient-green {
+        background-image: linear-gradient(180deg, #00FF00, #008000);
+        -webkit-background-clip: text; /* For older Webkit browsers */
+        background-clip: text;
+        color: transparent;
+        transition: font-size 0.5s cubic-bezier(.31,.64,.73,.38); /* Adjust cubic-bezier values for smoother transition */
+    }
+    section .gradient-green:hover,.gradient-red:hover {
+        font-size: 1.275rem;
+    }
+        
+    /* -------------------------------------------------------------------------------------------- */
+    /* Skills Section Styles */
+    section.skills {
+        background-color: var(--secondary-bg-color);
+        margin: 1.25rem; 
+        border-radius: var(--default-border-radius);
+        transition: border-radius 0.5s cubic-bezier(.31,.64,.73,.38); /* Adjust cubic-bezier values for smoother transition */
+        padding: 1.25rem;
+        width: 45%;
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text horizontally */
+    }
+    /* Apply hover effect by changing the CSS variable */
+
+    section.skills:hover {
+        --default-border-radius: 5rem; /* Transition to round corners on hover */
+    }
+    
+    section.skills h2 {
+        color: var(--text-color);
+        font-family: var(--font-montserrat);
+        font-size: 2rem; 
+        letter-spacing: 0.1rem;
+        font-weight: 300;
+        margin-bottom: 0.625rem; 
+    }
+    section.skills .logos {
+        color: var(--mountain-color);
+        font-family: var(--font-merriweather);
+        text-align: auto;
+        margin: 10px 0;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items:center;
+        gap: 60px;
+    }
+    section .logos img {
+        width: 3.125rem; 
+        height: auto;
+    }
+    
+    section .logo-item p {
+        margin-top: 5px; 
+        font-weight:300;
+    }
+    
+    /* BUTTON STYLES */
+    section .button-row{
+        margin-top: auto;
+        padding: 0.625rem 0;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    
+}
+/* Mountain good from 590px */
+/* ------------------------------------------------------------------------------------ */
+section .button-row .button {
+
+    font-family: var(--font-montserrat);
+    font-weight: bold;
+    text-decoration:none;
+
+    border-radius:5rem;
+    padding: 0.625em 1.25rem;
+
+    /* border: 0.1px solid var(--link-color); */
+    background-color: var(--secondary-bg-color);
+    color: var(--mountain-color);
+    transition: background-color 0.5s cubic-bezier(.31,.64,.73,.38); /* Adjust cubic-bezier values for smoother transition */
+}
+
+section .button-row .b1:hover {
+    /* color:  var(---color); */
+    margin-right: 8px;
+    background-color: #2ECC71;
+    transform: scale(1.2);
+}
+section .button-row .b2:hover {
+    /* color:  var(--mountain-color); */
+    margin-left:10px;
+    background-color:#ca0658;
+    transform: scale(1.2);
+}
+
+/* Footer Styles */
+footer.bottom-container {
+    background-color: var(--primary-bg-color);
+    padding: 1.25rem 0;
+    color: var(--secondary-bg-color);
+    position: relative;
+}
+
+footer nav {
+    padding-bottom: 30px;
+}
+
+footer .footer-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-family: var(--font-montserrat);
+    margin: 0 20px;
+    font-weight: bold;
+    border-radius: 3rem;
+    padding: 0.625rem 0.625rem;
+    /* transition: color 0.3s; */
+    transition: color 1s cubic-bezier(.31,.64,.73,.38); /* Adjust cubic-bezier values for smoother transition */
+    /* this kind of gives illusion */
+}
+
+footer .mail:hover {
+    color: var(--link-color);
+    background-color: var(--mountain-color);
+    box-shadow: 0px 0px 3.125rem 10px var(--text-color);
+}
+footer .lin:hover {
+    color: #0072b1 ;
+    background-color: var(--mountain-color);
+    box-shadow: 0px 0px 3.125rem 10px var(--text-color);
+}
+footer .ghub:hover {
+    color: #161616;
+    background-color: var(--mountain-color);
+    box-shadow: 0px 0px 3.125rem 10px var(--text-color);
+}
+/* COPYRIGHT SECTION */
+footer .copyright {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    /* box-shadow: 0px 0px 1px 100px var(--secondary-bg-color); */
+    padding-top: 0;
+    animation: bounceCopyright 60s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    /* left: -9.375rem;  */
+}
+.copyright {
+    position: absolute;
+}
+
+@keyframes bounceCopyright {
+    0%, 100% {
+        transform: translateX(0); /* Start and end position */
+    }
+    50% {
+        transform: translateX(calc(99vw - 100%)); /* Middle position (right edge) */
+    }
+
+}
+
+/* Dialog box */
+.dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog-content {
+    background-color: white;
+    padding: 1.250rem;
+    border-radius: 0.625rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.dialog h2 {
+    color: var(--text-color);
+    margin-right: 0.625rem;
+}
+
+.dialog p {
+    margin: 0.625rem 0;
+}
+
+.dialog button {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dialog button:hover {
+    background-color: #2E6E9A;
+}
