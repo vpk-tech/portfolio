@@ -165,7 +165,7 @@ section.profile {
     /* Changes after 720px */
 }
 /* -------------------------------------------------------------------------------------- */
-@media screen and (min-width:375px) and (max-width:430px){
+@media screen and (min-width:200px) and (max-width:430px){
     /* 375px 430px 50px*/
     /* Main Content Styles */
 
