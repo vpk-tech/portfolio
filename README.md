@@ -1,5 +1,6 @@
 # VPKs-portfolio-website
-# Website Version
-Version 0.2
-# Coming Soon
++ Link - https://vpk-tech.github.io/portfolio/
+## Website Version
++ Version 0.2
+## Coming Soon
 + Feature -> Responsiveness
